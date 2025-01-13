@@ -1,0 +1,13 @@
+commit 41baa7f81a57cbe2a25f1e94f96f5fce289d37bf
+Author: Neepa <p.neepa@hotmail.com>
+Date:   Mon Jan 13 15:39:25 2025 +0100
+
+    Bageri opsætning igang
+    
+    Bageri opsætning for desktop
+
+commit 549cf2043ca2abe97c10e4992de1dca512399b25
+Author: Veksoe <Anniika-xb@live.dk>
+Date:   Mon Jan 13 13:32:05 2025 +0100
+
+    Inital commit
