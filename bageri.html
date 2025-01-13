@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Oplev Fru. Søgaard – caféen på Søgaards Bryghus. Her mødes farverig stemning, lækre kager og unikke øl i en uformel atmosfære. Perfekt til hyggelige stunder i Aalborg."
+    />
+
+    <title>Bageri - Søgaards Bryghus</title>
+
+    <link rel="icon" type="image/x-icon" href="./assets/img/SB_logo_grøn.png" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/javascript/script.js" defer></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Imports of Vue things -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.js"></script>
+
+    <!-- Imports of components -->
+    <script type="module" src="./assets/components/TheHeader.js"></script>
+    <script type="module" src="./assets/components/TheFooter.js"></script>
+    <script type="module" src="./assets/components/Hero.js"></script>
+    <script
+      type="module"
+      src="./assets/components/FEPImageWithTextbox.js"
+    ></script>
+
+    <!-- Create Vue-applikationen -->
+    <script type="module" src="./assets/javascript/app.js" defer></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <Navigation></Navigation>
+
+      <main class="bageri">
+        <hero-component
+          :image-url="'./assets/img/fru-soegaard/heroImg.jpg'"
+          :alt-text="'Disken med kager i Søgaards Bryghus'"
+        ></hero-component>
+
+        <section class="intro">
+          <div class="introImgContainer">
+            <img
+              src="./assets/img/bageri/bageriIntro.jpg"
+              alt="To damer mens de kigger på bageri"
+            />
+          </div>
+          <div>
+            <h1>Bageri</h1>
+            <p>
+              Hos Fru Søgaard kan du altid få stillet din trang til godt
+              bagværk. Her har vi altid butikken fyldt med lækkerier for enhver
+              smag, hvad enten du er til godt rustikt morgenbrød eller sirlige
+              konditorkager til den søde tand.
+            </p>
+          </div>
+        </section>
+
+        <section class="bentoBox">
+          <div class="infobox">
+            <h2>Bageriets fristelser</h2>
+            <p>Friskbagt brød</p>
+            <p>Morgenbrød og boller</p>
+            <p>Flødekager og tørkager</p>
+            <p>Skærekager</p>
+            <p>Chokolade</p>
+            <p>Kaffe og Te</p>
+            <a href="#" class="btn bageriBtn">Se hele menuen</a>
+          </div>
+          <img
+            src="./assets/img/bageri/wienerbrod.jpg"
+            class="img1"
+            alt="Smoothies fra Søgaard Bryghus"
+          />
+          <img
+            src="./assets/img/bageri/morgenmadstallerken.jpg"
+            class="img2"
+            alt="Unge dreng og piger der spiser på Søgaards Bryghus"
+          />
+          <img
+            src="./assets/img/bageri/jordbartarte.jpg"
+            class="img3"
+            alt="To damer der kigger på kopper fra Søgaards Bryghus"
+          />
+          <img
+            src="./assets/img/bageri/brod.jpg"
+            class="img4"
+            alt="Tallerken med ret"
+          />
+          <img
+            src="./assets/img/bageri/juicemedvennepar.jpg"
+            class="img5"
+            alt="Mojito i et flaskeglas"
+          />
+        </section>
+        <section class="collageImgSect">
+          <div>
+            <h1>Kager til særlige anledninger</h1>
+            <p>
+              Gør din begivenhed uforglemmelig med vores håndlavede
+              specialkager. Uanset om det er bryllup, fødselsdag eller jubilæum,
+              skaber vi unikke kager
+            </p>
+            <button>Send en mail</button>
+          </div>
+          <div class="imgContainer">
+            <img
+              src="./assets/img/bageri/storjordbartarte.jpg"
+              alt="Stor jordbærtærte"
+            />
+            <img
+              src="./assets/img/bageri/selskabskager.jpg"
+              alt="kager til arrangementer"
+            />
+          </div>
+        </section>
+
+        <F-E-P-Img-With-Text
+          :image-url="'./assets/img/bageri/bageritogo.jpg'"
+          :image-alt="'Tag smagen med hjem fra vores Bageri'"
+          :heading="'Tag smagen med hjem fra vores Bageri'"
+          :description="'Forkæl dig selv eller dine nærmeste med lækkerier fra vores bageri – perfekt til at tage med hjem eller nyde på farten. Fra nybagt brød og sprøde croissanter til søde kager og fristende snacks. Gør hverdagen lidt bedre med kvalitetsbagværk.'"
+        >
+        </F-E-P-Img-With-Text>
+      </main>
+
+      <the-footer></the-footer>
+    </div>
+  </body>
+</html>
