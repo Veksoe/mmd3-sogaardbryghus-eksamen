@@ -1,0 +1,1617 @@
+/* --- IMPORTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=IM+Fell+French+Canon:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* --- VARIABLES --- */
+:root {
+
+    /* COLORS */
+    --primaryColor: #12785F;
+    --secondaryDarkColor: #E5DAC3;
+    --secondaryMiddleColor: #F4EFE7;
+    --secondaryLightColor: #F5F0E7;
+    --headerfooterColor: #392F2D;
+    --accentColor: #E49636;
+    --fruSoegaardDarkColor: #AF6E78;
+    --fruSoegaardLightColor: #E7D4D7;
+    --hrSoegaardDarkColor: #324780;
+    --hrSoegaardLightColor: #CAD2E5;
+    --backgroundColor: whiteSmoke;
+    --baseTextDarkColor: #1b1919;
+    --baseTextLightColor: #F5F5F5;
+
+
+    /* TEXT  */
+    --headerFont: "IM Fell French Canon", serif;
+    --baseTextFont: "Montserrat", serif;
+
+    /* SPACING */
+    --sectionSpacing: 100px;
+    --headerToTextSpacing: 0px;
+    --columnSpacing: 130px;
+    --gapSpacing: 32px;
+
+
+    /* DETAILS */
+    --borderRadius: 10px;
+    --round: 50%;
+    --interactionShadow: 3px 3px 5px #1b1b1b8a;
+}
+
+/* --- UTILLITIES --- */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.fullWidth {
+    grid-column: 1/-1;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* --- GENERALS --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--backgroundColor);
+
+}
+
+main {
+    display: grid;
+    grid-template-columns: 10% repeat(12, 1fr) 10%;
+    max-width: 1920px;
+    margin: auto;
+}
+
+section {
+    grid-column: 2/-2;
+    margin-bottom: var(--sectionSpacing);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--columnSpacing);
+    align-items: center;
+}
+
+article {}
+
+a {
+    font-family: var(--baseTextFont);
+    color: var(--baseTextLightColor);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    border-radius: var(--borderRadius);
+}
+
+.collageImgSect .imgContainer {
+    display: flex;
+    gap: var(--gapSpacing);
+    height: 600px;
+    align-items: center;
+}
+
+.collageImgSect .imgContainer img:nth-child(2) {
+    margin-top: 125px;
+}
+
+/* --- TEXT --- */
+h1 {
+    margin: var(--headerToTextSpacing);
+    font-family: var(--headerFont);
+    margin: var(--gapSpacing) var(--headerToTextSpacing) 0;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.1rem;
+    color: var(--baseTextDarkColor);
+
+}
+
+h2 {
+    font-family: var(--headerFont);
+    margin: var(--gapSpacing) var(--headerToTextSpacing) 0;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7rem;
+    color: var(--baseTextDarkColor);
+    margin: 0 0 1rem 3rem;
+}
+
+h3 {
+    font-family: var(--headerFont);
+    margin: 16px var(--headerToTextSpacing) 0;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    color: var(--baseTextDarkColor);
+}
+
+h4 {
+    max-width: 65ch;
+    margin: 16px var(--headerToTextSpacing) 0;
+    font-family: var(--baseTextFont);
+    font-size: 1.2rem;
+    color: var(--baseTextLightColor);
+    line-height: 1.5;
+}
+
+p {
+    max-width: 65ch;
+    margin: 15px 0;
+    font-family: var(--baseTextFont);
+    font-size: 1.2rem;
+    color: var(--baseTextDarkColor);
+    line-height: 1.5;
+}
+
+
+
+/* --- BUTTONS --- */
+button {
+    cursor: pointer;
+    font-family: var(--baseTextFont);
+    border: none;
+
+}
+
+a.btn,
+button {
+    background: var(--primaryColor);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--interactionShadow);
+    padding: 8px 16px;
+    min-width: 250px;
+    transition: .3s;
+    display: inline-block;
+    text-align: center;
+    color: var(--baseTextLightColor);
+    margin: 10px 15px 10px 0;
+}
+
+header a.btn {
+    font-size: .9rem;
+}
+
+a.btn:hover,
+button:hover {
+    filter: contrast(150%);
+    transform: scale(1.05);
+}
+
+a.btn:active,
+button:active {
+    transform: scale(.95);
+}
+
+a.btn.fruBtn {
+    background: var(--fruSoegaardDarkColor);
+    margin-right: var(--gapSpacing);
+}
+
+a.btn.hrBtn {
+    background: var(--hrSoegaardDarkColor);
+}
+
+/* --- HEADER --- */
+header {
+    background: linear-gradient(to Bottom, var(--headerfooterColor) 60%, rgba(0, 0, 0, 0));
+    height: 150px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .burger-menu,
+.topnavMobile {
+    display: none;
+}
+
+
+.headerTop {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1920px;
+    padding: 10px;
+    margin: auto;
+}
+
+.openIndicator {
+    font-size: .9rem;
+}
+
+.openIndicator p {
+    margin: 2px 0;
+    color: var(--baseTextLightColor);
+
+}
+
+.openIndicator div {
+    width: 15px;
+    height: 15px;
+    background: green;
+    border-radius: var(--round);
+    display: inline-block;
+    margin-right: 5px;
+}
+
+header a.btn {
+    padding: 5px 16px;
+    min-width: unset;
+}
+
+.topnav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+header .btnContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.btnContainer a.btn:nth-child(2) {
+    background: var(--hrSoegaardDarkColor);
+}
+
+.btnContainer a.btn:nth-child(3) {
+    background: var(--accentColor);
+}
+
+.topnav a,
+.topnavMobile a,
+.dropdown .dropbtn {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-transform: uppercase;
+    border: none;
+    margin: 0;
+    height: fit-content;
+    font-size: 1rem;
+    font-family: var(--baseTextFont);
+    transition: .3s;
+
+}
+
+.dropdown .dropbtn {
+    background-color: inherit;
+    box-shadow: none;
+
+}
+
+.dropdown {
+    height: fit-content;
+    position: relative;
+}
+
+header .active {
+    text-decoration: underline;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 12px;
+    background: var(--headerfooterColor);
+    min-width: 160px;
+    box-shadow: var(--interactionShadow);
+    z-index: 1;
+    border-radius: var(--borderRadius);
+}
+
+.dropdown-content a {
+    float: none;
+    color: var(--baseTextLightColor);
+    padding: 10 px 16px;
+    width: 220px;
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: var(--borderRadius);
+    transition: .3s;
+}
+
+
+header a.logo {
+    width: 80px;
+    height: 80px;
+    margin-top: -10px;
+    padding: 0;
+    transition: background-color 1s ease, transform 1s ease;
+}
+
+header a.logo.expand {
+    background-color: var(--primaryColor);
+    transform: scale(30);
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+
+header a.logo img {
+    transition: transform 1s ease;
+}
+
+header a.logo img.expand {
+    transform: scale(.2) translateY(60px)
+}
+
+.dropdown-content a:hover,
+.topnav a:hover {
+    transform: scale(1.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--headerfooterColor);
+    padding-bottom: var(--gapSpacing);
+}
+
+footer p,
+footer h2,
+footer h3 {
+    color: var(--baseTextLightColor);
+
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 2px 0;
+}
+
+footer .imgContainer {
+    display: flex;
+}
+
+footer .imgContainer img {
+    width: calc(100% / 4);
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: unset;
+}
+
+footer .contentContainer {
+    max-width: 1920px;
+    margin: 0 10%;
+    color: var(--baseTextLightColor);
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .openingHours {
+    min-width: 250px;
+}
+
+footer .openingHours div {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    position: relative;
+    padding-top: 160px;
+}
+
+footer .logo {
+    width: 300px;
+    position: absolute;
+    top: -150px
+}
+
+
+footer .contact i {
+    margin-right: 5px;
+}
+
+footer .contact a {
+    margin: 2px 0;
+    display: inline-block;
+}
+
+footer .adress {
+    display: flex;
+    align-items: center;
+}
+
+footer .social {
+    font-size: 1.3rem;
+    display: flex;
+    gap: 16px;
+}
+
+footer .social i {
+    filter: drop-shadow(1px 1px 1px #1b1b1b8a);
+}
+
+footer .fruInsta {
+    color: var(--fruSoegaardDarkColor);
+}
+
+footer .hrInsta {
+    color: var(--hrSoegaardDarkColor);
+}
+
+footer .copyright {
+    margin: auto;
+    text-align: center;
+    color: var(--baseTextLightColor);
+    font-size: .8rem;
+}
+
+/* --- FEP WITH IMG AND TEXT  --- */
+.fep {
+    grid-template-columns: unset;
+    position: relative;
+    width: 100%;
+}
+
+.fep .textContainer {
+    position: absolute;
+    background: var(--secondaryLightColor);
+    border-radius: var(--borderRadius);
+    padding: 50px;
+    width: 600px;
+}
+
+.fep .imgContainer {
+    width: 80%;
+    height: 100%;
+}
+
+.fep img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* --- HERO --- */
+.hero {
+    margin-top: -65px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero img {
+    border-radius: unset;
+    height: 40vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero .imgContainer {
+    height: 100%;
+    grid-column: 1/-1;
+
+}
+
+.hero .imgContainer .overlay {
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 40vh;
+    position: absolute;
+    top: 0;
+}
+
+.landingpage .hero .imgContainer .overlay {
+    height: 90vh;
+}
+
+.landingpage .hero img {
+    height: 90vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.landingpage .hero .textContainer {
+    position: absolute;
+    bottom: 200px;
+    color: var(--baseTextLightColor);
+    text-align: center;
+    width: 100%;
+}
+
+.landingpage .hero h1 {
+    font-size: 5rem;
+    color: var(--baseTextLightColor);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.landingpage .hero h2 {
+    font-family: var(--baseTextFont);
+    color: var(--baseTextLightColor);
+    font-size: 1.8rem;
+}
+
+
+.changingTextContainer {
+    margin-top: 10px;
+
+}
+
+.changingText {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.changingText.active {
+    opacity: 1;
+}
+
+.changingText.hidden {
+    opacity: 0;
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primaryColor);
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+    border-radius: var(--round);
+    border: none;
+    color: var(--baseTextLightColor);
+    text-align: center;
+    padding: 20px;
+    animation: bounce 2s infinite;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    min-width: unset;
+}
+
+.scrollIndicator.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* --- LANDINGPAGE  --- */
+.landingpage .introImgContainer {
+    position: relative;
+}
+
+.landingpage .hrLogo,
+.landingpage .fruLogo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    position: absolute;
+}
+
+.landingpage .hrLogo {
+    bottom: 70px;
+    left: -100px;
+}
+
+.landingpage .fruLogo {
+    bottom: -40px;
+    left: -10px;
+}
+
+.bryghusOverview {
+    grid-template-columns: unset;
+}
+
+.bryghusOverview h1 {
+    text-align: center;
+}
+
+.bryghusOverview h3 {
+    font-family: var(--baseTextFont);
+    font-weight: 700;
+    text-align: center;
+}
+
+.bryghusOverview .contentContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--gapSpacing);
+}
+
+.bryghusOverview a {
+    display: inline-block;
+    color: var(--baseTextDarkColor);
+}
+
+.bryghusOverview img {
+    height: 140px;
+    object-fit: cover;
+}
+
+.bryghusOverview a:hover img {
+    animation: click 1s ease-in-out infinite;
+
+}
+
+.gallery {
+    grid-template-columns: unset;
+    display: flex;
+    gap: var(--gapSpacing);
+    height: 750px;
+    margin-bottom: 0;
+}
+
+.gallery .imgContainer {
+    overflow: hidden;
+    height: 600px;
+    width: calc(100% / 4 - 32px);
+    border-radius: var(--borderRadius);
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s;
+}
+
+.gallery .imgContainer:nth-child(odd) {
+    margin-top: -150px;
+}
+
+.gallery .imgContainer:hover img {
+    transform: scale(1.2);
+}
+
+/* --- CAROUSEL --- */
+.carousel-container {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    height: 700px;
+    grid-column: 1/-1;
+}
+
+.carousel {
+    padding: 0 20%;
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+.carousel-slide.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.carousel-slide.inactive {
+    transform: scale(0.9);
+    opacity: 0.6;
+}
+
+.content {
+    display: flex;
+    gap: var(--gapSpacing);
+    justify-content: space-between;
+    align-items: center;
+    background: #FFF8F8;
+    box-shadow: 6px 14px 21px rgba(0, 0, 0, 0.24);
+    border-radius: var(--borderRadius);
+    height: 660px;
+}
+
+.carousel h2 {
+    font-family: "Handlee", serif;
+    font-size: 2.2rem;
+}
+
+.carousel p {
+    margin: 10px 0;
+}
+
+.carousel .text {
+    width: 100%;
+    margin: 60px 0 60px 60px;
+}
+
+.carousel .text div {
+    display: flex;
+    gap: var(--gapSpacing);
+    justify-content: space-between;
+
+}
+
+.carousel .text div p:nth-child(2) {
+    min-width: 100px;
+}
+
+.carousel .season {
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+.carousel .text .meal {
+    display: block;
+    margin: 10px 0;
+}
+
+.carousel .text .meal p {
+    margin: 0;
+}
+
+.carousel a.btn {
+    position: absolute;
+    bottom: 60px;
+}
+
+.carousel img {
+    width: 35%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 95%;
+    margin: 0 2.5%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background: var(--primaryColor);
+    border: none;
+    width: 125px;
+    height: 125px;
+    border-radius: var(--round);
+    color: white;
+    padding: 10px;
+    font-size: 60px;
+    box-shadow: var(--interactionShadow);
+    transition: .3s;
+    min-width: unset;
+
+}
+
+.carousel-controls button:hover {
+    filter: contrast(150%);
+    transform: scale(1.05);
+}
+
+.carousel-controls button:active {
+    transform: scale(.95);
+}
+
+
+/* --- FRU. SØGAARD --- */
+.fru .introImgContainer,
+.hr .introImgContainer {
+    position: relative;
+}
+
+.fru .intro .fruLogo,
+.hr .intro .hrLogo {
+    position: absolute;
+    bottom: -20px;
+    right: -60px;
+    width: 150px;
+    height: 150px;
+}
+
+
+.fruOverview,
+.hrOverview {
+    grid-template-columns: unset;
+    text-align: center;
+    gap: var(--gapSpacing);
+}
+
+.fruOverview .contentContainer,
+.hrOverview .contentContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px;
+}
+
+.hrOverview .contentContainer {
+    padding: 0;
+    gap: 15px;
+}
+
+.fruOverview article,
+.hrOverview article {
+    max-width: 260px;
+}
+
+.fruOverview h3,
+.hrOverview h3 {
+    font-family: var(--baseTextFont)
+}
+
+.fruOverview p,
+.hrOverview p {
+    margin-top: 05px;
+}
+
+.fruOverview img,
+.hrOverview img {
+    width: 250px;
+    height: 250px;
+    border-radius: var(--round);
+    object-fit: cover;
+}
+
+
+.fru .bentoBox {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+.fru .bentoBox .infobox {
+    grid-column: 1/3;
+    grid-row: span 2;
+    background: var(--fruSoegaardLightColor);
+    border-radius: var(--borderRadius);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.fru .bentoBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fru .bentoBox .img1 {
+    grid-column: 3/4;
+    grid-row: 1;
+}
+
+.fru .bentoBox .img2 {
+    grid-column: 4/6;
+}
+
+.fru .bentoBox .img3 {
+    grid-column: 3/5;
+}
+
+.fru .bentoBox .img4 {
+    grid-column: 5/6;
+}
+
+.fru .bentoBox .img5 {
+    grid-column: -2/-1;
+    grid-row: 1/-1;
+}
+
+.fru .fep .textContainer {
+    right: 0;
+    background: var(--fruSoegaardLightColor);
+}
+
+.hr .fep .textContainer {
+    background: var(--hrSoegaardLightColor);
+}
+
+.hr .fep .imgContainer {
+    margin-left: 20%;
+}
+
+.fru .collageImgSect img,
+.hr .collageImgSect img {
+    width: 50%;
+    height: 450px;
+    object-fit: cover;
+
+}
+
+
+
+.hr .hrMenu {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.hr .hrMenu .imgContainer {
+    display: flex;
+    gap: var(--gapSpacing);
+    margin: var(--gapSpacing);
+}
+
+.hr .hrMenu .imgContainer img {
+    width: calc(100% / 3 - 32px);
+    height: 550px;
+    object-fit: cover;
+}
+
+/* --- ØLSMAGNING --- */
+
+.olsmagning .collageImgSect .imgContainer {
+    flex-direction: column;
+}
+
+.olsmagning .collageImgSect .imgContainer img {
+    width: 650px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.olsmagning .collageImgSect .imgContainer img:nth-child(2) {
+    margin-top: 0;
+    margin-right: 150px;
+
+}
+
+.olsmagspakker img {
+    display: none;
+}
+
+.olsmagning .olsmagspakkenContainer {
+    background-image: url("../img/olsmagning/clausTesteren.png");
+    grid-template-columns: unset;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+
+.olsmagspakker {
+    width: 50%;
+    margin-left: 50%;
+}
+
+.olsmagspakker article {
+    display: flex;
+    align-items: center;
+    height: 400px;
+}
+
+.olsmagspakker .btnContainer {
+    margin-right: 15px;
+    width: 250px;
+}
+
+.btnContainer .active {
+    filter: contrast(150%);
+    transform: scale(1.05);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.olsmagspakker .btnContainer button {
+    margin: 15px 0;
+    font-size: 1rem;
+}
+
+.gulboks {
+    background: var(--accentColor);
+    padding: var(--gapSpacing);
+    border-radius: var(--borderRadius);
+    color: var(--secondaryLightColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.article-content {
+    position: absolute;
+    width: 80%;
+    opacity: 0;
+    transform: scale(0);
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    display: none;
+}
+
+.article-content.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.article-content.appearing {
+    animation-name: appear;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+.article-content.disappearing {
+    animation-name: disappear;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+.olsmagspakker p {
+    color: var(--baseTextLightColor);
+}
+
+.beerwalk a {
+    color: var(--hrSoegaardDarkColor);
+    text-decoration: underline;
+}
+
+
+/* --- ANIMATIONS --- */
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+@keyframes click {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(.93);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+/* --- MOBILE --- */
+@media screen and (max-width: 1000px) {
+
+    main {
+        grid-template-columns: 15px repeat(4, 1fr) 15px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: var(--gapSpacing);
+    }
+
+    a.btn,
+    button {
+        width: 100%;
+    }
+
+    header a.btn,
+    header button {
+        width: unset;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    /* --- HEADER --- */
+    header {
+        height: 120px;
+        background: linear-gradient(to Bottom, var(--headerfooterColor) 55%, rgba(0, 0, 0, 0));
+    }
+
+    .topnav,
+    .headerTop {
+        display: none;
+    }
+
+    .topnavMobile {
+        display: block;
+    }
+
+    .topnavMobile .burger-menu {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 2.3rem;
+        color: var(--baseTextLightColor);
+        background: none;
+        border: none;
+        cursor: pointer;
+        min-width: unset;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .topnavMobile .btn {
+        display: inline-block;
+        margin: 20px 15px;
+    }
+
+    .topnavMobile .side-menu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100%;
+        background: var(--headerfooterColor);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        transition: right 0.3s ease;
+        z-index: 10;
+        overflow-y: auto;
+        max-height: 100%;
+    }
+
+    .topnavMobile .side-menu.open {
+        right: 0;
+    }
+
+    .topnavMobile .close-menu {
+        align-self: flex-end;
+        background: none;
+        border: none;
+        font-size: 2.3rem;
+        cursor: pointer;
+        color: var(--baseTextLightColor);
+        min-width: unset;
+        box-shadow: unset;
+    }
+
+    .topnavMobile .logo {
+        margin: 0 auto;
+        width: 120px;
+        height: 120px;
+    }
+
+    .topnavMobile .btnContainer .btn {
+        margin: 10px 0;
+    }
+
+    .topnavMobile .btnContainer a.btn:nth-child(1) {
+        background: var(--hrSoegaardDarkColor);
+    }
+
+    .topnavMobile .btnContainer a.btn:nth-child(2) {
+        background: var(--accentColor);
+    }
+
+    .topnavMobile .dropdown-content {
+        position: static;
+        background: none;
+        box-shadow: none;
+    }
+
+    .topnavMobile .dropdown-content a {
+        color: var(--baseTextLightColor);
+        margin-left: 15px;
+    }
+
+    .dropdown .dropbtn,
+    .dropdown .dropdown-content a {
+        text-align: left;
+    }
+
+    .openIndicator {
+        display: none;
+    }
+
+    /* --- FOOTER  --- */
+
+    footer .contentContainer {
+        flex-direction: column;
+    }
+
+    footer .logo {
+        display: none;
+    }
+
+    footer .openingHours,
+    footer .links,
+    footer .contact {
+        margin-top: 25px;
+    }
+
+    footer .links {
+        padding: 0;
+        margin: 25px 0;
+        align-items: start;
+    }
+
+
+
+    footer h2 {
+        margin: 0;
+    }
+
+    /* --- HERO  --- */
+    .hero {
+        margin-top: -55px;
+    }
+
+    /* --- FEP  --- */
+    .fep {
+        height: 500px;
+    }
+
+    .fep .imgContainer {
+        width: 100%;
+        height: 50%;
+    }
+
+    .fep .textContainer {
+        width: 90%;
+        left: 5%;
+        padding: 32px;
+        top: 150px;
+    }
+
+    footer .imgContainer img {
+        height: 100px;
+    }
+
+    .fep h2 {
+        margin: 0;
+    }
+
+
+    /* --- LANDINGPAGE --- */
+    .landingpage .hero h1 {
+        margin: 0 15px;
+        font-size: 3.4rem;
+    }
+
+    .landingpage .hero h2 {
+        font-size: 1.3rem;
+        margin-top: 5px;
+    }
+
+    .scrollIndicator {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .landingpage .intro {
+        flex-direction: column-reverse;
+    }
+
+    .landingpage .intro h1 {
+        margin: 0;
+    }
+
+    .landingpage .intro .btn {
+        margin: 5px 0;
+    }
+
+    .landingpage .introImgContainer {
+        margin: 15px 0;
+    }
+
+    .landingpage .introImgContainer .hrLogo {
+        left: unset;
+        bottom: unset;
+        right: 0;
+        top: -50px;
+        width: 130px;
+        height: 130px;
+    }
+
+    .landingpage .introImgContainer .fruLogo {
+        left: 0;
+        bottom: unset;
+        top: -50px;
+        width: 130px;
+        height: 130px;
+    }
+
+    .gallery {
+        flex-direction: row;
+        height: 200px;
+        gap: 10px;
+    }
+
+
+    .gallery .imgContainer {
+        height: 150px;
+        width: calc(100% / 4 - 10px);
+    }
+
+    .bryghusOverview {
+        margin-bottom: 100px;
+    }
+
+    .bryghusOverview h3 {
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+
+    .bryghusOverview .contentContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 45px;
+        margin: 0;
+    }
+
+    .bryghusOverview img {
+        height: 70px;
+        border-radius: unset;
+    }
+
+    .carousel-container {
+        height: 800px;
+    }
+
+    .carousel {
+        padding: 0 15px;
+    }
+
+    .carousel .content {
+        flex-direction: column-reverse;
+        gap: 15px;
+        justify-content: start;
+        height: 770px;
+    }
+
+    .carousel img {
+        width: 100%;
+        height: 30%;
+        border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+    }
+
+    .carousel .text {
+        margin: 0 30px;
+        width: unset;
+    }
+
+    .carousel .text div p:nth-child(2) {
+        min-width: 70px;
+    }
+
+    .carousel h2 {
+        font-size: 2rem;
+    }
+
+    .carousel .text div {
+        align-items: center;
+    }
+
+    .carousel a.btn {
+        bottom: 40px;
+        width: unset;
+    }
+
+    .carousel-controls {
+        bottom: -40px;
+        top: unset;
+        width: 50%;
+        margin: 0 25%;
+    }
+
+    .carousel-controls button {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    /* --- FRU. SØGAARD --- */
+    .fru .intro .fruLogo,
+    .hr .intro .hrLogo {
+        bottom: -50px;
+        right: 0;
+        width: 130px;
+        height: 130px;
+    }
+
+    .fruOverview .contentContainer,
+    .hrOverview .contentContainer {
+        padding: 0;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .fruOverview h3,
+    .hrOverview h3 {
+        margin-top: 0;
+    }
+
+    .fruOverview img,
+    .hrOverview img {
+        border-radius: var(--round);
+        object-fit: cover;
+    }
+
+    .fru .bentoBox {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        margin-bottom: 0;
+    }
+
+    .fru .bentoBox .infobox {
+        grid-column: 1/-1;
+        grid-row: 2/4;
+        background: var(--fruSoegaardLightColor);
+        border-radius: var(--borderRadius);
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .fru .bentoBox img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .fru .bentoBox .img1 {
+        grid-column: 1/2;
+        grid-row: 1;
+    }
+
+    .fru .bentoBox .img2 {
+        grid-column: 2/3;
+        grid-row: 1;
+
+    }
+
+    .fru .bentoBox .img3 {
+        grid-column: 1/2;
+    }
+
+    .fru .bentoBox .img4 {
+        grid-column: 1/2;
+
+    }
+
+    .fru .bentoBox .img5 {
+        grid-column: 2/4;
+        grid-row: 4/6;
+    }
+
+    .collageImgSect .imgContainer {
+        display: none;
+    }
+
+    .hr .hrMenu .imgContainer img {
+        border-radius: 5px;
+        width: calc(100% / 3 - 5px);
+        height: 200px;
+    }
+
+    .hr .hrMenu .imgContainer {
+        gap: 5px;
+        margin: 0;
+
+    }
+
+    .hr .fep .imgContainer {
+        margin-left: 0;
+    }
+
+    /* --- ØLSMAGNING --- */
+    .olsmagning .olsmagspakkenContainer {
+        background-image: none;
+        height: unset;
+    }
+
+    .olsmagspakker {
+        width: unset;
+        margin: unset;
+    }
+
+    .olsmagspakker img {
+        display: block;
+        object-fit: cover;
+        object-position: left;
+    }
+
+    .olsmagspakker article {
+        flex-direction: column;
+    }
+
+    .olsmagspakker .btnContainer {
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 15px;
+    }
+
+    .olsmagspakker .btnContainer button {
+        min-width: unset;
+        width: calc(100% / 2 - 15px);
+    }
+}
