@@ -1,9 +1,17 @@
 // Define the Navbar-component
 const landingpage = "index.html";
+const soegaard = "sogaard.html"
 const fruSoegaard = "frusoegaard.html"
 const hrSoegaard = "hrsoegaard.html"
-const selskaber = "selskaber.html" 
+const menuer = "menuer.html"
+const selskaber = "selskaber.html"
+const heleSvineriet = "helesvineriet.html"
 const olsmagning = "olsmagning.html"
+const olMedHjem = "olmedhjem.html"
+const bageri = "bageri.html"
+const bryggeri = "bryggeri.html"
+const destilleri = "destilleri.html"
+const booking = "booking.html"
 const Navigation = {
     template: `
      <header>
@@ -13,9 +21,9 @@ const Navigation = {
                     <div></div>Åben nu</p>
                 </div>
                 <div class="btnContainer">
-                    <a href="#" class="btn">Book Bord</a>
-                    <a href="#" class="btn">Book Rundvisning</a>
-                    <a href="#" class="btn">Book Selskab</a>
+                    <a href="https://book.easytable.com/book/?id=be8fa&lang=auto" class="btn">Book Bord</a>
+                    <a href="https://book.easytable.com/book/?id=be8fa&lang=auto" class="btn">Book Rundvisning</a>
+                    <a href="${booking}" class="btn">Book Selskab</a>
                 </div>
             </div>
             <nav class="topnav" id="myTopnav">
@@ -24,29 +32,29 @@ const Navigation = {
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="dropdown-content">
-                        <a href="#">Bryghuset</a>
+                        <a href="${soegaard}">Bryghuset</a>
                         <a href="${fruSoegaard}">Fru. Søgaard</a>
                         <a href="${hrSoegaard}">Hr. Søgaard</a>
                     </div>
                 </div>
-                <a href="#">Menukort</a>
+                <a href="${menuer}">Menukort</a>
                 <div class="dropdown">
                     <button class="dropbtn">Arrangementer
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="dropdown-content">
                         <a href="${selskaber}">Selskaber</a>
-                        <a href="#">Hele Svineriet</a>
+                        <a href="${heleSvineriet}">Hele Svineriet</a>
                         <a href="${olsmagning}">Ølsmagning</a>
-                        <a href="#">Øl med hjem</a>
+                        <a href="${olMedHjem}">Øl med hjem</a>
                     </div>
                 </div>
                 <a href="${landingpage}" class="logo"><img src="./assets/img/SB_logo_grøn.png"
                         alt="Søgaards Bryghus logo, af et af et grafisk ansigt med en stjerne om det ene øje og en måne om det andet."
                         ></a>
-                <a href="#">Bageri</a>
-                <a href="#">Bryggeri</a>
-                <a href="#">Destilleri</a>
+                <a href="${bageri}">Bageri</a>
+                <a href="${bryggeri}">Bryggeri</a>
+                <a href="${destilleri}">Destilleri</a>
             </nav>
             <nav class="topnavMobile" id="myTopnavMmobile">
                     <a href="#" class="btn">Book Bord</a>
@@ -61,35 +69,35 @@ const Navigation = {
                         alt="Søgaards Bryghus logo, af et af et grafisk ansigt med en stjerne om det ene øje og en måne om det andet."
                         ></a>
                         <div class="btnContainer">
-                    <a href="#" class="btn">Book Rundvisning</a>
-                    <a href="#" class="btn">Book Selskab</a>
+                    <a href="https://book.easytable.com/book/?id=be8fa&lang=auto" class="btn">Book Rundvisning</a>
+                    <a href="${booking}" class="btn">Book Selskab</a>
                 </div>
                      <div class="dropdown">
                     <button class="dropbtn">Søgaard
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="dropdown-content">
-                        <a href="#">Bryghuset</a>
+                        <a href="${soegaard}">Bryghuset</a>
                         <a href="${fruSoegaard}">Fru. Søgaard</a>
                         <a href="${hrSoegaard}">Hr. Søgaard</a>
                     </div>
                 </div>
-                <a href="#">Menukort</a>
+                <a href="${menuer}">Menukort</a>
                 <div class="dropdown">
                     <button class="dropbtn">Arrangementer
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="dropdown-content">
                         <a href="${selskaber}">Selskaber</a>
-                        <a href="#">Hele Svineriet</a>
+                        <a href="${heleSvineriet}">Hele Svineriet</a>
                         <a href="${olsmagning}">Ølsmagning</a>
-                        <a href="#">Øl med hjem</a>
+                        <a href="${olMedHjem}#">Øl med hjem</a>
                     </div>
                 </div>
                 
-                <a href="#">Bageri</a>
-                <a href="#">Bryggeri</a>
-                <a href="#">Destilleri</a>
+                <a href="${bageri}">Bageri</a>
+                <a href="${bryggeri}">Bryggeri</a>
+                <a href="${destilleri}">Destilleri</a>
                 </div>
             </nav>
 
