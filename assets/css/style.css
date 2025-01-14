@@ -849,8 +849,7 @@ footer .copyright {
 
 /* --- FRU. SØGAARD --- */
 .fru .introImgContainer,
-.hr .introImgContainer,
-.bageri .introImgContainer {
+.hr .introImgContainer {
     position: relative;
 }
 
@@ -1007,19 +1006,23 @@ footer .copyright {
 
 /* --- ØLSMAGNING --- */
 
-.olsmagning .collageImgSect .imgContainer {
+.olsmagning .collageImgSect .imgCollageContainer {
     flex-direction: column;
 }
 
-.olsmagning .collageImgSect .imgContainer img {
-    width: 650px;
+.olsmagning .collageImgSect .imgContainer {
+    width: 100%;
+}
+
+.olsmagning .collageImgSect .imgCollageContainer img {
     height: 250px;
+    width: 100%;
     object-fit: cover;
 }
 
-.olsmagning .collageImgSect .imgContainer img:nth-child(2) {
+.olsmagning .collageImgSect .imgCollageContainer .imgContainer:nth-child(2) {
     margin-top: 0;
-    margin-right: 150px;
+    margin-right: -150px;
 
 }
 
