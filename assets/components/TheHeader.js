@@ -13,6 +13,17 @@ const bryggeri = "bryggeri.html"
 const destilleri = "destilleri.html"
 const booking = "booking.html"
 const Navigation = {
+    props: {
+        imageUrl: {
+            type: String,
+            default: './assets/img/SB_logo_grøn.png'
+        },
+        imageAlt: {
+            type: String,
+            default: ''
+        },
+
+    },
     template: `
      <header>
             <div class="headerTop">
@@ -49,9 +60,7 @@ const Navigation = {
                         <a href="${olMedHjem}">Øl med hjem</a>
                     </div>
                 </div>
-                <a href="${landingpage}" class="logo"><img src="./assets/img/SB_logo_grøn.png"
-                        alt="Søgaards Bryghus logo, af et af et grafisk ansigt med en stjerne om det ene øje og en måne om det andet."
-                        ></a>
+                <a href="${landingpage}" class="logo"><img :src="imageUrl" :alt="imageAlt"></a>
                 <a href="${bageri}">Bageri</a>
                 <a href="${bryggeri}">Bryggeri</a>
                 <a href="${destilleri}">Destilleri</a>

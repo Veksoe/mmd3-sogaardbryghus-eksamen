@@ -26,76 +26,12 @@
     <!-- Create Vue-applikationen -->
     <script type="module" src="./assets/javascript/app.js" defer></script>
 
-    <style>
-        section.wip,
-        section.feps {
-            justify-items: center;
-            grid-template-columns: 1fr;
-            text-align: center;
-        }
 
-        .wip .imgContainer img {
-            width: 250px;
-            height: 200px;
-            margin-top: 32px;
-        }
-
-        #beer1 {
-            animation: beer1Anim 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-            transform-origin: bottom center;
-        }
-
-        #beer2 {
-            animation: beer2Anim 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-            transform-origin: bottom center;
-        }
-
-
-        @keyframes beer1Anim {
-
-            0%,
-            85% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-
-            40% {
-                transform: translate(10px, -30px) rotate(10deg);
-            }
-
-            50% {
-                transform: translate(20px, -50px) rotate(20deg);
-            }
-
-            60% {
-                transform: translate(15px, -40px) rotate(15deg);
-            }
-        }
-
-        @keyframes beer2Anim {
-
-            0%,
-            85% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-
-            40% {
-                transform: translate(-10px, -30px) rotate(-10deg);
-            }
-
-            50% {
-                transform: translate(-20px, -50px) rotate(-20deg);
-            }
-
-            60% {
-                transform: translate(-15px, -40px) rotate(-15deg);
-            }
-        }
-    </style>
 </head>
 
 <body>
     <div id="app">
-        <navigation></navigation>
+        <navigation :image-url="'./assets/img/CMYK_Destilleri logo-2.png'"></navigation>
 
         <main>
             <section class="wip">
