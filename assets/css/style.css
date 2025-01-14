@@ -490,6 +490,7 @@ footer .copyright {
     grid-template-columns: unset;
     position: relative;
     width: 100%;
+    overflow: hidden;
 }
 
 .fep .textContainer {
@@ -961,7 +962,6 @@ footer .copyright {
 }
 
 .fru .fep .textContainer {
-    right: 0;
     background: var(--fruSoegaardLightColor);
 }
 
@@ -1234,6 +1234,10 @@ section.feps {
     text-align: center;
 }
 
+.wip .imgContainer {
+    overflow: visible;
+}
+
 .wip .imgContainer img {
     width: 250px;
     height: 200px;
@@ -1250,6 +1254,35 @@ section.feps {
     transform-origin: bottom center;
 }
 
+/*----- SLIDE TEKST BOX ----- */
+
+.sogaard .fep .textContainer,
+.hr .fep .textContainer {
+    left: -100%;
+    opacity: 0;
+    transition: left 0.5s ease, opacity 0.5s ease;
+
+}
+
+
+.sogaard .fep .textContainer.visible,
+.hr .fep .textContainer.visible {
+    left: 0;
+    opacity: 1;
+}
+
+.fru .fep .textContainer {
+    right: -100%;
+    opacity: 0;
+    transition: right 0.5s ease, opacity 0.5s ease;
+
+}
+
+
+.fru .fep .textContainer.visible {
+    right: 0;
+    opacity: 1;
+}
 
 /* --- ANIMATIONS --- */
 @keyframes bounce {

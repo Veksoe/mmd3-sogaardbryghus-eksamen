@@ -165,4 +165,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    const sogaardTextBoxEl = document.querySelector('.sogaard .fep ');
+    const hrTextBoxEl = document.querySelector('.hr .fep ');
+    const fruTextBoxEl = document.querySelector('.fru .fep ');
+
+    // Tjekker om elementet 'sogaardTextBoxEl' findes i DOM'en
+    if (sogaardTextBoxEl) {
+        // Opretter en IntersectionObserver for at observere synligheden af et element i viewporten
+        const observer = new IntersectionObserver((entries, observer) => {
+            // Itererer over alle entries (de elementer der bliver observeret)
+            entries.forEach(entry => {
+                // Tjekker om entry-elementet er synligt i viewporten
+                if (entry.isIntersecting) {
+                    // Finder '.textContainer' inde i entry.target (det observerede element, som er .fep)
+                    const textBox = entry.target.querySelector('.textContainer');
+                    if (textBox) {
+                        // Tilføjer klassen 'visible' for at aktivere animationen
+                        textBox.classList.add('visible');
+                    }
+                    // Stopper med at observere dette element (da vi kun vil køre animationen én gang)
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            // root: null betyder, at vi observerer synlighed i forhold til viewporten
+            root: null,
+            // threshold: 0.5 betyder, at callbacken aktiveres, når 50% af elementet er synligt
+            threshold: 0.5
+        });
+
+        // Starter observeren og begynder at overvåge 'sogaardTextBoxEl'
+        observer.observe(sogaardTextBoxEl);
+    }
+
+    if (hrTextBoxEl) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Tilføj klassen 'visible' til tekstboksen, når forældercontaineren er synlig
+                    const textBox = entry.target.querySelector('.textContainer');
+                    if (textBox) {
+                        textBox.classList.add('visible');
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { root: null, threshold: 0.5 });
+
+        observer.observe(hrTextBoxEl);
+    }
+
+    if (fruTextBoxEl) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Tilføj klassen 'visible' til tekstboksen, når forældercontaineren er synlig
+                    const textBox = entry.target.querySelector('.textContainer');
+                    if (textBox) {
+                        textBox.classList.add('visible');
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { root: null, threshold: 0.5 });
+
+        observer.observe(fruTextBoxEl);
+    }
 });
