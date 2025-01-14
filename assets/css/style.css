@@ -99,16 +99,23 @@ a {
 img {
     max-width: 100%;
     border-radius: var(--borderRadius);
+    transition: .3s;
+
 }
 
-.collageImgSect .imgContainer {
+.imgContainer {
+    overflow: hidden;
+    border-radius: var(--borderRadius);
+}
+
+.collageImgSect .imgCollageContainer {
     display: flex;
     gap: var(--gapSpacing);
     height: 600px;
     align-items: center;
 }
 
-.collageImgSect .imgContainer img:nth-child(2) {
+.collageImgSect .imgCollageContainer .imgContainer:nth-child(2) {
     margin-top: 125px;
 }
 
@@ -185,7 +192,7 @@ button {
     margin: 10px 15px 10px 0;
 }
 
-.centerbtn{
+.centerbtn {
     margin-left: 111%;
 }
 
@@ -678,7 +685,6 @@ footer .copyright {
 }
 
 .gallery .imgContainer {
-    overflow: hidden;
     height: 600px;
     width: calc(100% / 4 - 32px);
     border-radius: var(--borderRadius);
@@ -695,7 +701,7 @@ footer .copyright {
     margin-top: -150px;
 }
 
-.gallery .imgContainer:hover img {
+.imgContainer:hover.zoom img {
     transform: scale(1.2);
 }
 
@@ -836,7 +842,8 @@ footer .copyright {
 
 /* --- FRU. SØGAARD --- */
 .fru .introImgContainer,
-.hr .introImgContainer, .bageri .introImgContainer {
+.hr .introImgContainer,
+.bageri .introImgContainer {
     position: relative;
 }
 
@@ -893,7 +900,8 @@ footer .copyright {
 }
 
 
-.fru .bentoBox, .bageri .bentoBox{
+.fru .bentoBox,
+.bageri .bentoBox {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr 1fr;
     gap: 10px;
@@ -912,30 +920,36 @@ footer .copyright {
     height: 100%;
 }
 
-.fru .bentoBox img, .bageri .bentoBox img {
+.fru .bentoBox img,
+.bageri .bentoBox img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.fru .bentoBox .img1, .bageri .bentoBox .img1  {
+.fru .bentoBox .img1,
+.bageri .bentoBox .img1 {
     grid-column: 3/4;
     grid-row: 1;
 }
 
-.fru .bentoBox .img2, .bageri .bentoBox .img2 {
+.fru .bentoBox .img2,
+.bageri .bentoBox .img2 {
     grid-column: 4/6;
 }
 
-.fru .bentoBox .img3, .bageri .bentoBox .img3  {
+.fru .bentoBox .img3,
+.bageri .bentoBox .img3 {
     grid-column: 3/5;
 }
 
-.fru .bentoBox .img4, .bageri .bentoBox .img4 {
+.fru .bentoBox .img4,
+.bageri .bentoBox .img4 {
     grid-column: 5/6;
 }
 
-.fru .bentoBox .img5, .bageri .bentoBox .img5  {
+.fru .bentoBox .img5,
+.bageri .bentoBox .img5 {
     grid-column: -2/-1;
     grid-row: 1/-1;
 }
@@ -954,13 +968,17 @@ footer .copyright {
 }
 
 .fru .collageImgSect img,
-.hr .collageImgSect img, .bageri .collageImgSect img{
-    width: 50%;
+.hr .collageImgSect img,
+.bageri .collageImgSect img {
+    width: 100%;
     height: 450px;
     object-fit: cover;
 
 }
 
+.collageImgSect .imgContainer {
+    width: 50%;
+}
 
 
 .hr .hrMenu {
@@ -1089,7 +1107,7 @@ footer .copyright {
     text-decoration: underline;
 }
 
-/* --- Bageri -- */ 
+/* --- Bageri -- */
 .bageri .bentoBox .infobox {
     grid-column: 1/3;
     grid-row: span 2;
@@ -1537,7 +1555,8 @@ footer .copyright {
         object-fit: cover;
     }
 
-    .fru .bentoBox, .bageri .bentoBox {
+    .fru .bentoBox,
+    .bageri .bentoBox {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 5px;
@@ -1556,33 +1575,39 @@ footer .copyright {
         height: 100%;
     }
 
-    .fru .bentoBox img, .bageri .bentoBox img {
+    .fru .bentoBox img,
+    .bageri .bentoBox img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    .fru .bentoBox .img1, .bageri .bentoBox .img1 {
+    .fru .bentoBox .img1,
+    .bageri .bentoBox .img1 {
         grid-column: 1/2;
         grid-row: 1;
     }
 
-    .fru .bentoBox .img2, .bageri .bentoBox .img2 {
+    .fru .bentoBox .img2,
+    .bageri .bentoBox .img2 {
         grid-column: 2/3;
         grid-row: 1;
 
     }
 
-    .fru .bentoBox .img3, .bageri .bentoBox .img3 {
+    .fru .bentoBox .img3,
+    .bageri .bentoBox .img3 {
         grid-column: 1/2;
     }
 
-    .fru .bentoBox .img4, .bageri .bentoBox .img4 {
+    .fru .bentoBox .img4,
+    .bageri .bentoBox .img4 {
         grid-column: 1/2;
 
     }
 
-    .fru .bentoBox .img5, .bageri .bentoBox .img5 {
+    .fru .bentoBox .img5,
+    .bageri .bentoBox .img5 {
         grid-column: 2/4;
         grid-row: 4/6;
     }
@@ -1591,19 +1616,20 @@ footer .copyright {
         display: none;
     }
 
-    .bageri .collageImgSect .imgContainer{
+    .bageri .collageImgSect .imgContainer {
         display: flex;
     }
 
-    .bageri .collageImgSect{
+    .bageri .collageImgSect {
         display: flex;
         flex-direction: column-reverse;
     }
 
-    .bageri .collageImgSect .imgContainer img{
+    .bageri .collageImgSect .imgContainer img {
         height: 400px;
         width: calc(100% / 2 - 5px);
     }
+
     .hr .hrMenu .imgContainer img {
         border-radius: 5px;
         width: calc(100% / 3 - 5px);

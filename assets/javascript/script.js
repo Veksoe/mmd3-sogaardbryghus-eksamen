@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ----- HERO  ----- //
     if (changeTextEl) {
-        // Call changeText function every 8th second
+        // Call changeText function every 6th second
         setInterval(changeText, 6000);
     }
     // Changes text on landingpage hero over time
