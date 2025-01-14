@@ -510,10 +510,12 @@ footer .copyright {
     width: 100%;
     object-fit: cover;
 }
-.fep .btn{
+
+.fep .btn {
     width: 300px;
 }
-.fep .imgContainer{
+
+.fep .imgContainer {
     height: 600px;
 }
 
@@ -1125,83 +1127,98 @@ footer .copyright {
     text-align: center;
 }
 
-.bageri .bentoBox .infobox p{
+.bageri .bentoBox .infobox p {
     margin: 5px;
 }
 
-.bageri .fep .btn{
+.bageri .fep .btn {
     display: none;
 }
 
-/* --- SOGAARDS BRYGHUS --- */ 
-.sogaard .collageImgSect .imgContainer .fruInd img{
-   color: linear-gradient(to right, #AF6E78, #f2f2f2);}
-
-   .sogaard .fep .imgContainer {
+/* --- SOGAARDS BRYGHUS --- */
+.sogaard .fep .imgContainer {
     margin-left: 20%;
 }
-.sogaard .collageImgSect .imgContainer img {
-    width: 250px;
+
+.sogaard .collageImgSect {
     height: 450px;
+}
+
+.sogaard .collageImgSect .imgCollageContainer {
+    height: 100%;
+}
+
+.sogaard .imgCollageContainer .imgContainer {
+    position: relative;
+    height: 100%;
+    overflow: visible;
+    box-shadow: var(--interactionShadow);
+}
+
+.sogaard .imgCollageContainer .imgContainer:nth-child(2) {
+    margin-top: unset;
+}
+
+.sogaard .imgCollageContainer img {
+    height: 100%;
     object-fit: cover;
 }
 
-.sogaard .imgContainer{
-    display: flex;
-    gap: 20px; 
-    position: relative;
-    justify-content: cente
+.sogaard .overlay {
+    height: 100%;
+    border-radius: 8px;
+    transition: .3s;
+
 }
 
-.imgWrapper {
-    position: relative; /* Sørger for, at overlayen er positioneret over billedet */
-  }
-  
-  img {
-    display: block;
+.sogaard .overlayWrapper {
+    overflow: hidden;
     width: 100%;
-    height: auto;
-    border-radius: 8px; /* Hvis du vil have afrundede hjørner på billederne */
-  }
-  
-  .overlay {
+    height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Standard overlay (kan ændres per billede) */
-    border-radius: 8px; /* Sørger for, at overlayen følger billedets hjørner */
-    opacity: 0.6; /* Gennemsigtighed af overlayen */
-  }
-  
-  .hrIndWrapper .overlay {
-    background-color: rgba(175, 110, 120, 0.6); /* Farveoverlay for Hr. Søgaard */
-  }
-  
-  .fruIndWrapper .overlay {
-    background-color: rgba(50, 150, 200, 0.6); /* Farveoverlay for Fru. Søgaard */
-  }
-  
+    border-radius: 8px;
 
-/* Hover-effekt på billederne */
-.imgWrapper:hover .overlay {
-    opacity: 0; /* Fjerner overlayen ved hover */
-    z-index: -1; /* Skubber overlayen bag billedet */
-  }
-  
-  /* Zoom-effekt på billederne ved hover */
-  .imgWrapper:hover img {
-    transform: scale(1.05); /* Giver en lille zoom-effekt */
-  }
+}
 
-.logoEntH{
+.sogaard .fruOverlay {
+    background-color: rgba(124, 71, 79, 0.6);
+}
+
+.sogaard .hrOverlay {
+    background-color: rgba(29, 90, 121, 0.6);
+}
+
+.sogaard .imgCollageContainer .imgContainer .logoEnt {
     position: absolute;
-    top: 10px; /* Juster højden på logoet */
-    left: 24%;
-    transform: translateX(-50%); /* Centrerer logoet horisontalt */
-    z-index: 10; /* Sørger for, at logoet er ovenpå billedet */
-   
+    top: -50px;
+    left: calc(50% - 60px);
+    width: 125px;
+    height: 125px;
+    z-index: 1;
+}
+
+.sogaard .imgCollageContainer .imgContainer p {
+    position: absolute;
+    bottom: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 100%;
+    color: var(--baseTextLightColor);
+    background: rgba(0, 0, 0, 0.493);
+    display: none;
+    transition: .3s;
+}
+
+.sogaard .imgCollageContainer .imgContainer:hover .overlay {
+    transform: translateY(-100%);
+
+}
+
+.sogaard .imgCollageContainer .imgContainer:hover p {
+    display: block;
 }
 
 .bageri .fep .textContainer {
