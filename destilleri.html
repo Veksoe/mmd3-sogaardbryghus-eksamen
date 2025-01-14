@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Oplev ægte bryggeristemning på Søgaards Bryghus – et unikt sted med café, gourmetmad, håndbrygget øl og eksklusive destillerede drikke. Perfekt til afslapning, smagsoplevelser og selskaber">
+
+    <title>Forside - Søgaards Bryghus</title>
+
+    <link rel="icon" type="image/x-icon" href="./assets/img/SB_logo_grøn.png">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/javascript/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Imports of Vue things -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.js"></script>
+
+    <!-- Imports of components -->
+    <script type="module" src="./assets/components/TheHeader.js"></script>
+    <script type="module" src="./assets/components/TheFooter.js"></script>
+    <script type="module" src="./assets/components/Carousel.js"></script>
+
+    <!-- Create Vue-applikationen -->
+    <script type="module" src="./assets/javascript/app.js" defer></script>
+
+    <style>
+        .wip section {
+            justify-content: center;
+            grid-template-columns: unset;
+            text-align: center;
+        }
+
+        .wip .imgContainer img {
+            width: 200px;
+            height: 200px;
+            margin-top: 32px;
+        }
+
+        #beer1 {
+            animation: beer1Anim 3s ease-in-out infinite;
+        }
+
+        #beer2 {
+            animation: beer2Anim 3s ease-in-out infinite;
+        }
+
+        @keyframes beer1Anim {
+            0% {
+                transform: rotate(0) translateX(0px) translateY(0px)
+            }
+
+            50% {
+                transform: rotate(26deg) translateX(15px) translateY(-15px)
+            }
+
+            90% {
+                transform: rotate(0) translateX(0px) translateY(0px)
+            }
+        }
+
+        @keyframes beer2Anim {
+            0% {
+                transform: rotate(0) translateX(0px) translateY(0px)
+            }
+
+            50% {
+                transform: rotate(-26deg) translateX(-15px) translateY(-15px)
+            }
+
+            90% {
+                transform: rotate(0) translateX(0px) translateY(0px)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <navigation></navigation>
+
+        <main class="wip">
+            <section>
+                <h1>Siden er under opbygning</h1>
+                <p>Mens du venter på siden er klar, kan du komme ned på bryghuset og nyde en kold øl eller et lækkert
+                    stykke kage!</p>
+                <div class="imgContainer">
+                    <img src="./assets/img/beer1.svg" alt="" id="beer1">
+                    <img src="./assets/img/beer2.svg" alt="" id="beer2">
+                </div>
+
+            </section>
+        </main>
+        <the-footer></the-footer>
+    </div>
+</body>
+
+</html>
